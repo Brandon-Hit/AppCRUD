@@ -1,1 +1,90 @@
-Actualización de nombre
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Empleados - CRUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Directorio de Empleados</h1>
+        <p>Gestión de personal - Single Page Application</p>
+    </header>
+
+    <!-- Contenedor Principal (SPA) -->
+    <main class="container">
+        
+        <!-- Formulario para Crear / Actualizar -->
+        <section class="card form-section">
+            <h2 id="form-title">Agregar Nuevo Empleado</h2>
+            <form id="employee-form">
+                <input type="hidden" id="employee-id">
+                
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" required placeholder="Ej. Ana Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" required placeholder="ana.perez@empresa.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Puesto:</label>
+                    <input type="text" id="position" required placeholder="Ej. Desarrollador Frontend">
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Departamento:</label>
+                    <select id="department" required>
+                        <option value="">Seleccione...</option>
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Recursos Humanos">Recursos Humanos</option>
+                        <option value="Ventas">Ventas</option>
+                        <option value="Finanzas">Finanzas</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Guardar Empleado</button>
+                    <button type="button" id="btn-cancel" class="btn btn-secondary" style="display: none;">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección de Listado (Read / Update / Delete) -->
+        <section class="card list-section">
+            <h2>Lista de Empleados</h2>
+            <div class="table-responsive">
+                <table id="employee-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Puesto</th>
+                            <th>Departamento</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employee-tbody">
+                        <!-- Los datos se inyectarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="empty-message" class="empty-msg" style="display: none;">No hay empleados registrados.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bootcamp de Programación - Aplicación CRUD LocalStorage</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
